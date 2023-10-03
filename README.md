@@ -1,4 +1,32 @@
-// Updated readme file
+# Project: TBD
+
+## Project Info
+
+TBD
+
+## Stack
+
+TBD
+
+## General Agreements
+
+- Weekly Planning Meeting: **Every Monday at 11:30 BST**
+- **Daily StandUp in chat (Discord)**. Explain what you have been working on the day before and if you have some questions.
+- Ticket Management: GitHub Projects. Ticket naming: PN: Create a Footer, PN-2: Create Header, etc. 'PN' stands for 'Project Name'. For example, if our project is called 'Black Friday', the prefix will be 'BF'.
+- **Do your branching ONLY from the develop branch**.
+
+## Workflow
+
+1. Create a new todo in the project board (GitHub Projects) and convert it to an issue.
+2. Assign the todo to yourself if you are ready to start working on it.
+3. Checkout develop `git checkout develop` (go to the develop branch) and run `git pull`.
+4. Create a new branch like this: `git checkout -b issue-<issue-number>/<branch-name>.` Example: `git checkout -b issue-14/update-readme`.
+5. Work on your todo. Stage, commit, and push your changes.
+6. Create a pull request from your branch back into develop. Write `Closes #<issue-number>` in your pull request’s comments. Example: `Closes #14`.
+7. Send a link to your PR to our Discord chat and notify everyone (@Voyager).
+8. Merge the pull request if you got an approval.
+9. Notify everyone in out team that you have merged the PR so we update the develop branch locally.
+   > Remember: After each merged PR (develop got updated) run `git checkout develop`, `git pull`, `git checkout your-branch`, `git merge develop` That way, you are up-to-date with the develop branch and avoid most conflicts.
 
 # voyage-tasks
 
