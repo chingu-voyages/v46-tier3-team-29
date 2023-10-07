@@ -1,12 +1,22 @@
-# Project: TBD
+# Project: Racers Run Club
 
 ## Project Info
 
-TBD
+A website for a running club. The website will have a home page, about page, events page, and a contact page. It will be responsive and mobile friendly.
+
+## MVP
+
+1. Main page
+2. Creating a user
+3. User profile page
+4. Adding group events to the main page
+5. About us page
+6. Ranking page (fastest runners)
+7. Responsiveness (mobile friendly)
 
 ## Stack
 
-TBD
+TypeScript, Next, TailwindCSS, Prisma, MongoDB, Bun
 
 ## General Agreements
 
