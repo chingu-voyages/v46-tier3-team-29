@@ -4,6 +4,10 @@
 
 A website for a running club. The website will have a home page, about page, events page, and a contact page. It will be responsive and mobile friendly.
 
+## Project local development
+
+- [Project installation guide](./docs/project_setup.md)
+
 ## MVP
 
 1. Main page
