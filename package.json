@@ -16,9 +16,11 @@
     "seed": "bun prisma/seed.ts"
   },
   "dependencies": {
+    "flowbite": "^1.8.1",
     "next": "13.5.4",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "tailwind-merge": "^1.14.0"
   },
   "devDependencies": {
     "@prisma/client": "^5.4.1",
