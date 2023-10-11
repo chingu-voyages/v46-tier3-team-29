@@ -18,7 +18,7 @@ export default function Link({
   return (
     <NextLink
       href={href}
-      className={twMerge('text-white', isActive && 'text-blue-500')}
+      className={twMerge('text-white', isActive && 'text-primary')}
     >
       {children}
     </NextLink>
