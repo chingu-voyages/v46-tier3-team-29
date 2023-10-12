@@ -23,12 +23,10 @@ const Button = ({
   textContent,
   type = 'button',
   kind = 'primary',
-  className = '',
+  className = BUTTON_COLORS[kind],
 }: ButtonProps) => {
-  const classes = BUTTON_COLORS[kind];
-
   return (
-    <button type={type} className={twMerge(COMMON_CLASSES, classes)}>
+    <button type={type} className={twMerge(COMMON_CLASSES, className)}>
       {textContent}
     </button>
   );
