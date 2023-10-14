@@ -1,35 +1,40 @@
-import { twMerge } from 'tailwind-merge';
+import { twMerge } from 'tailwind-merge'
 
 type ButtonProps = {
-  textContent: string;
-  type?: 'button' | 'reset' | 'submit';
-  kind?: 'primary' | 'secondary' | 'alert';
-  className?: string;
-};
+  textContent: string
+  color?: 'primary' | 'secondary' | 'alert'
+  type?: 'button' | 'reset' | 'submit'
+  className?: string
+}
 
 const COMMON_CLASSES =
-  'text-white font-bold focus:outline-none rounded-lg px-4 py-2 text-center mr-3 md:mr-0';
+  'text-white font-bold focus:outline-none rounded-lg px-4 py-2 text-center mr-3 md:mr-0'
+
+const HOVER_CLASSES = {
+  brighten: 'hover:brightness-125',
+  darken: 'hover:brightness-75',
+}
 
 const BUTTON_COLORS = {
-  primary:
-    'bg-primary hover:bg-primaryHover dark:bg-primary dark:hover:hover:bg-primaryHover',
-  secondary:
-    'bg-secondary hover:bg-secondaryHover dark:bg-secondary dark:hover:hover:bg-secondaryHover',
-  alert:
-    'bg-alert hover:bg-alertHover dark:bg-alert dark:hover:hover:bg-alertHover',
-};
+  primary: `bg-primary ${HOVER_CLASSES.darken} dark:bg-primary dark:${HOVER_CLASSES.brighten}}`,
+  secondary: `bg-secondary ${HOVER_CLASSES.darken} dark:bg-secondary dark:hover:${HOVER_CLASSES.brighten}`,
+  alert: `bg-alert ${HOVER_CLASSES.darken} dark:bg-alert dark:${HOVER_CLASSES.darken}`,
+}
 
 const Button = ({
   textContent,
   type = 'button',
-  kind = 'primary',
-  className = BUTTON_COLORS[kind],
+  color = 'primary',
+  className = '',
 }: ButtonProps) => {
   return (
-    <button type={type} className={twMerge(COMMON_CLASSES, className)}>
+    <button
+      type={type}
+      className={twMerge(COMMON_CLASSES, BUTTON_COLORS[color], className)}
+    >
       {textContent}
     </button>
-  );
-};
+  )
+}
 
-export default Button;
+export default Button
