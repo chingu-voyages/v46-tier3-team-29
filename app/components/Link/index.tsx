@@ -1,26 +1,29 @@
-'use client';
+'use client'
 
-import NextLink from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
-import path from 'path';
-import { twMerge } from 'tailwind-merge';
+import NextLink from 'next/link'
+import { usePathname } from 'next/navigation'
+import { twMerge } from 'tailwind-merge'
 
-export default function Link({
+const Link = ({
   href,
   children,
+  className = '',
 }: {
-  href: string;
-  children: string;
-}) {
-  const pathname = usePathname();
-  const isActive = pathname === href;
+  href: string
+  children: string
+  className?: string
+}) => {
+  const pathname = usePathname()
+  const isActive = pathname === href
 
   return (
     <NextLink
       href={href}
-      className={twMerge('text-white', isActive && 'text-primary')}
+      className={twMerge(className, isActive && 'text-primary')}
     >
       {children}
     </NextLink>
-  );
+  )
 }
+
+export default Link
