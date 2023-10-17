@@ -18,7 +18,7 @@ const routes = [
 
 const NavBar = () => {
   return (
-    <nav className="bg-black dark:bg-black w-full border-b border-gray-200 dark:border-gray-600">
+    <nav className="bg-black dark:bg-black w-full border-b border-gray-200 dark:border-gray-600 h-full">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <div className="flex md:order-2">
           <Button textContent="Login" className="text-black" />
