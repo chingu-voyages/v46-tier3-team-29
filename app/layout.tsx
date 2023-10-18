@@ -1,7 +1,8 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import Header from './components/Navbar'
+import Nav from '@/app/components/Navbar'
+import Footer from '@/app/components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -13,9 +14,12 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
-      <body>
-        <Header />
-        {children}
+      <body className="h-screen">
+        <div className="page-layout h-full">
+          <Nav />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   )
