@@ -15,14 +15,10 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
       <body className="h-screen">
-        <div className="grid grid-cols-1 grid-rows-12 h-full">
-          <div className="row-span-1">
-            <Nav />
-          </div>
-          <div className="row-span-10">{children}</div>
-          <div className="row-span-2">
-            <Footer />
-          </div>
+        <div className="page-layout h-full">
+          <Nav />
+          {children}
+          <Footer />
         </div>
       </body>
     </html>
