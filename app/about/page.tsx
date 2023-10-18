@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { FemaleRunner } from '../Images'
 
 const About = () => {
   return (
@@ -29,12 +30,7 @@ const About = () => {
           </a>
         </div>
         <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
-          <Image
-            width={400}
-            height={400}
-            src="https://assets.stickpng.com/images/580b585b2edbce24c47b2b72.png"
-            alt="mockup"
-          />
+          <FemaleRunner />
         </div>
       </div>
     </section>
