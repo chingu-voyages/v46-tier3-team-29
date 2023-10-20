@@ -9,9 +9,10 @@ const main = async () => {
     create: {
       email: 'alice@example.com',
       name: 'alice',
+      //??
+      password: '12345'
     },
   })
-
   console.log({ user })
 }
 

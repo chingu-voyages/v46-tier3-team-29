@@ -1,10 +1,11 @@
 import { twMerge } from 'tailwind-merge'
 
 type ButtonProps = {
-  textContent: string
-  color?: 'primary' | 'secondary' | 'alert'
-  type?: 'button' | 'reset' | 'submit'
-  className?: string
+  textContent: string;
+  color?: 'primary' | 'secondary' | 'alert';
+  type?: 'button' | 'reset' | 'submit';
+  className?: string;
+  action?: () => void;
 }
 
 const COMMON_CLASSES =
@@ -26,9 +27,11 @@ const Button = ({
   type = 'button',
   color = 'primary',
   className = '',
+  action
 }: ButtonProps) => {
   return (
     <button
+      onClick={action}
       type={type}
       className={twMerge(COMMON_CLASSES, BUTTON_COLORS[color], className)}
     >
