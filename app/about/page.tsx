@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { FemaleRunner } from '../Images'
+import { FemaleRunner } from '../images'
 
 const About = () => {
   return (
