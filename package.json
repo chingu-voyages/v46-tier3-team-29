@@ -16,9 +16,11 @@
     "seed": "bun prisma/seed.ts"
   },
   "dependencies": {
+    "apexcharts": "^3.44.0",
     "flowbite": "^1.8.1",
     "next": "13.5.4",
     "react": "^18",
+    "react-apexcharts": "^1.4.1",
     "react-dom": "^18",
     "tailwind-merge": "^1.14.0"
   },
