@@ -7,7 +7,7 @@ type InputFormProps = {
     data: any;
     setData: Dispatch<React.SetStateAction<LoginDataTypes>>;
     placeholder: string;
-    name: string;
+    name: string | HTMLInputTypeAttribute;
 }
 
 const InputForm = ({ data, setData, placeholder, type, name }: InputFormProps) => {

@@ -1,3 +1,4 @@
+'use client'
 import { twMerge } from 'tailwind-merge'
 
 type ButtonProps = {
@@ -5,7 +6,7 @@ type ButtonProps = {
   color?: 'primary' | 'secondary' | 'alert';
   type?: 'button' | 'reset' | 'submit';
   className?: string;
-  action?: () => void;
+  action: (e?: any) => void | any;
 }
 
 const COMMON_CLASSES =
