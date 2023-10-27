@@ -19,30 +19,40 @@ export const authOptions: NextAuthOptions = {
             },
             async authorize(credentials, req) {
 
-                if (!credentials?.email || !credentials?.password) {
-                    // if credentials are not given (if empty form)
-                    return null
-                }
-                const user = await prisma.user.findUnique({
-                    where: {
-                        email: credentials?.email,
+                try {
+                    if (!credentials?.email || !credentials?.password) {
+                        // if credentials are not given (if empty form)
+                        return null;
                     }
-                });
 
-                //?? if user match with that mail , or no exist
-                if (!user) return null
-                //?? check if password match
-                const isPassMatch = await compare(credentials.password, user?.password);
+                    const user = await prisma.user.findUnique({
+                        where: { email: credentials.email },
+                        // select: { email: true },
+                    });
+                    console.log("user: ", user)
+                    if (!user) {
+                        console.log("No user with that email");
+                        return null;
+                    }
 
-                //?? if pass no match 
-                if (!isPassMatch) return null;
+                    const isPassMatch = await compare(credentials.password, user.password);
 
-                //if all condition are great, we return user data 
-                return {
-                    id: user?.id,
-                    email: user?.email,
-                    name: user?.name,
-                    //?? randomKey:"Hey Cool"
+                    if (!isPassMatch) {
+                        console.log("Incorrect password");
+                        return null;
+                    } else {
+                        console.log("Authentication successful");
+                        console.log(user);
+                        return {
+                            id: user.id,
+                            email: user.email,
+                            name: user.name,
+                            randomKey: "Hey Cool"
+                        };
+                    }
+                } catch (err) {
+                    console.log("An error occurred:", err);
+                    return null;
                 }
             }
 
