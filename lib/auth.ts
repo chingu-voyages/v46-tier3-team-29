@@ -1,7 +1,8 @@
-import { NextAuthOptions } from "next-auth";
+import { NextAuthOptions, Session } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { compare } from "bcryptjs";
 import prisma from "@/prisma";
+import { getServerSession } from "next-auth"
 
 export const authOptions: NextAuthOptions = {
     pages: {
@@ -34,8 +35,9 @@ export const authOptions: NextAuthOptions = {
                         console.log("No user with that email");
                         return null;
                     }
-
-                    const isPassMatch = await compare(credentials.password, user.password);
+                    const isPassMatch = credentials?.password === user?.password;
+                    // be used when we'll hash the password during registration
+                    //const isPassMatch = await compare(credentials.password, user.password);
 
                     if (!isPassMatch) {
                         console.log("Incorrect password");
@@ -82,4 +84,21 @@ export const authOptions: NextAuthOptions = {
             return token;
         }
     }
+}
+
+// get the session, or the user who is logged in
+export const getCurrentUser = async () => {
+    try {
+        const session = await getServerSession(authOptions);
+        //?? for debug
+        console.log(session);
+
+        return session;
+    } catch (error) {
+        //for debug
+        console.log("no user logged in")
+        console.log(error);
+    }
+
+
 }

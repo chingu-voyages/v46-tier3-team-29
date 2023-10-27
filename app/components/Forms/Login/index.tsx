@@ -38,6 +38,7 @@ const LoginForm = () => {
                 router.push("/dashboard");
             } else {
                 console.log("error accured while authenticating", loginData)
+
             }
         } catch (error) {
             setLoading(false);
@@ -68,7 +69,10 @@ const LoginForm = () => {
                     type='password'
                 />
                 <Button
-                    textContent='Sign In'
+                    // disable while loading 
+
+                    disable={loading}
+                    textContent={loading ? 'loading' : 'Sign In'}
                     action={handleSubmit}
                 />
             </section>
