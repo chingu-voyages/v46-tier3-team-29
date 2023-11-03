@@ -7,3 +7,11 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
+
+.page-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 75px 1fr 250px;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
